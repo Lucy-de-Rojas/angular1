@@ -1,0 +1,20 @@
+h1 {
+        color: rgb(1, 255, 1);
+}
+
+
+.orange {
+        color: orange;
+}
+
+.red {
+
+        background-color: rgb(255, 118, 255);
+        color: rgb(160, 0, 0);
+}
+
+h2 {
+
+        text-decoration: underline;
+
+}

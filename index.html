@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>angular with ninja</title>
+        <link rel="stylesheet" href="./content/css/styles.css">
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="./app/app.js"></script>
+</head>
+<body ng-init="numbers=[1,5,8,7,8,8,8,8,7]; meats=['porkie','beef','chicken']; color = 'orange'; red='red'" >
+
+
+
+        <h1>angular with ninja</h1>
+        <input type="text" ng-model="favMeat" placeholder="fav Meat"/>
+        <p>meat: {{favMeat}}</p>
+
+
+        <hr />
+        <h2>Directives</h2>
+        <p>are tag attributes or custom made tags (just like components)</p>
+
+        <hr />
+        <h2>Expressions \{\{\}\}</h2>
+        <p>snippets of code in {{}} like below:</p>
+
+        <!-- one at the time: -->
+        <p>numbers: {{numbers[0]}}</p>
+        <p class="{{color}}">meat: {{meats[0]}}</p>
+        <p class="{{red}}">meat: {{meats[1]}}</p>
+
+
+
+        <!-- looping: -->
+        <hr /><h2>ng-repeat -> looping</h2>
+        <p ng-init="ninjas=['papa','benji','mama']">
+                <p ng-repeat="ninja in ninjas">
+                        {{ninja}}
+                </p></p>
+
+
+
+                <!-- modules: -->
+                <hr /><h2>Modules</h2>
+
+
+
+
+                <!-- controllers -->
+                <hr /><h2>Controllers</h2>
+                <div ng-controller="NinjaController">
+                        <p>{{message}}</p>
+                        <p>{{message2}}</p>
+
+                        <p ng-repeat="ninja in ninjas2">
+                                {{ninja}}
+                        </p>
+
+                </div>
+
+
+
+
+
+
+                <!-- filters -->
+                <hr /><h2>Filters & filter piping <br /> | orderBy: [-]key | filter</h2>
+                <div ng-controller="NinjaController">
+
+                        <input type="text" ng-model="search" placeholder="search by">
+
+                        <p ng-repeat="ninja in ninjas3 | orderBy:'name' | filter: search">
+                                Name: {{ninja.name}} <br />
+                                belt size: {{ninja.belt}} <br />
+                                rate: {{ninja.rate | currency:'£'}}
+                        </p>
+                </div>
+
+
+
+
+
+
+
+                <!-- ng-include -->
+                <hr /><h2>ng-include -> to break up complex code</h2>
+
+                <ng-include src="'./header.html'"></ng-include>
+
+                <!-- OR -->
+                <header ng-include="'./header.html'"></header>
+
+
+
+
+
+</body>
+</html>
