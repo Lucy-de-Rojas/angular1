@@ -1,0 +1,18 @@
+<div ng-controller="NinjaController">
+        <hr /><h2>Filters & filter piping <br /> | orderBy: [-]key | filter</h2>
+        <div ng-controller="NinjaController">
+
+                <input type="text" ng-model="search" placeholder="search by">
+
+                <p ng-repeat="ninja in ninjas3 | orderBy:'name' | filter: search">
+                        Name: {{ninja.name}} <br />
+                        belt size: {{ninja.belt}} <br />
+                        rate: {{ninja.rate | currency:'£'}}
+                </p>
+        </div>
+
+
+
+
+
+</div>

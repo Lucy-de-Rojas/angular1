@@ -26,21 +26,33 @@ myNinjaApp.controller('NinjaController', ['$scope',function ($scope) {
 
         $scope.ninjas3 = [{
                 name: 'PAPAz',
-                belt: 35,
+                belt: 'ellow',
                 rate: 13.54,
                 available: true,
         }, {
                 name: 'LucyZ',
-                belt: 38,
+                belt: 'black',
                 rate: 26.54,
                 available: false,
         }, {
                 name: 'Benjiz',
-                belt: 14,
+                belt: 'red',
                 rate: 36.56,
                 available: true,
         }
 ];
+
+
+
+$scope.removeNinja = function (ninja) {
+        let removedNinjaIndex = $scope.ninjas3.indexOf(ninja);
+
+        $scope.ninjas3.splice(removedNinjaIndex, 1);
+
+
+
+
+}
 
 
 

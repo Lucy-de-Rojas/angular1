@@ -1,0 +1,23 @@
+<div ng-controller="NinjaController">
+<hr />
+        <h2>ng-click</h2>
+
+
+<button ng-click="order = 'name'">order by name</button>
+<button ng-click="order = 'belt'">order by belt</button>
+
+
+
+
+<div  ng-repeat="ninja in ninjas3 | orderBy: order | filter: '!ninja.available'">
+        name: {{ninja.name}} : belt: {{ninja.belt}}
+
+        <button ng-click="removeNinja(ninja)">X</button>
+
+</div>
+
+
+
+
+
+</div>

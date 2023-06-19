@@ -52,16 +52,9 @@
 
 
                 <!-- controllers -->
-                <hr /><h2>Controllers</h2>
-                <div ng-controller="NinjaController">
-                        <p>{{message}}</p>
-                        <p>{{message2}}</p>
+               <ng-include src="'./controllers.html'"></ng-include>"
 
-                        <p ng-repeat="ninja in ninjas2">
-                                {{ninja}}
-                        </p>
 
-                </div>
 
 
 
@@ -69,17 +62,7 @@
 
 
                 <!-- filters -->
-                <hr /><h2>Filters & filter piping <br /> | orderBy: [-]key | filter</h2>
-                <div ng-controller="NinjaController">
-
-                        <input type="text" ng-model="search" placeholder="search by">
-
-                        <p ng-repeat="ninja in ninjas3 | orderBy:'name' | filter: search">
-                                Name: {{ninja.name}} <br />
-                                belt size: {{ninja.belt}} <br />
-                                rate: {{ninja.rate | currency:'£'}}
-                        </p>
-                </div>
+                <ng-include src="'./filters.html'"></ng-include>'
 
 
 
@@ -88,24 +71,27 @@
 
 
                 <!-- ng-include -->
-                <hr /><h2>ng-include -> to break up complex code</h2>
+                <ng-include src="'./ng-include.html'"></ng-include>"
 
-                <ng-include src="'./header.html'"></ng-include>
-
-                <!-- OR -->
-                <header ng-include="'./header.html'"></header>
 
 
 
 
 
                 <!-- ng-show OR ng-hide -->
-                <hr /><h2>ng-show OR ng-hide</h2>
-                <div ng-controller="NinjaController">
+                <div ng-include="'./ng-show.html'"></div>
 
-                        <div ng-repeat="ninja in ninjas3" ng-show="ninja.available">
-                                <p>{{ninja.name}}</p>
-                </div></div>
+
+
+
+
+
+
+
+
+                <!-- ng-click -->
+                <div ng-include="'./ng-click.html'"></div>
+
 
 
 
