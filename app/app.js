@@ -27,15 +27,18 @@ myNinjaApp.controller('NinjaController', ['$scope',function ($scope) {
         $scope.ninjas3 = [{
                 name: 'PAPAz',
                 belt: 35,
-                rate: 13.54
+                rate: 13.54,
+                available: true,
         }, {
                 name: 'LucyZ',
                 belt: 38,
                 rate: 26.54,
+                available: false,
         }, {
                 name: 'Benjiz',
                 belt: 14,
-                rate: 36.56
+                rate: 36.56,
+                available: true,
         }
 ];
 
